@@ -9,7 +9,7 @@
     both with real USB devices and with lab simulations that use the 'subst' command.
 
 .NOTES
-    Author: [Your Real Name]
+    Author: B. Underhill
     Development assisted by: xAI Grok
     Version: 1.3
     MITRE ATT&CK: T1052 Exfiltration Over Physical Medium, T1091 Replication Through Removable Media
