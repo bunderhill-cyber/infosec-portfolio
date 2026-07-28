@@ -7,7 +7,7 @@
     Designed for financial services environments where data theft via USB is a major risk.
 
 .NOTES
-    Author: Grok Cybersecurity Portfolio
+    Author: B. Underhill Cybersecurity Portfolio
     Version: 1.0
     MITRE ATT&CK: T1052 Exfiltration Over Physical Medium, T1091 Replication Through Removable Media
     Requires: Admin rights + ideally Sysmon installed

@@ -30,7 +30,11 @@ Successfully flagged anomalous logons with clear CSV reports and reasoning.
 ```
 ## MITRE ATT&CK Coverage
 - T1078 — Valid Accounts
+
+The script detects abuse of legitimate user accounts, including off-hours logons and logons from unusual workstations. This is a common technique used by insiders or attackers who have obtained valid credentials to blend in with normal activity.
 - T1110 — Brute Force
+
+The detection of repeated failed logon attempts helps identify credential guessing or brute-force attempts against user accounts, which is often a precursor to successful account compromise in insider threat or lateral movement scenarios.
 
 ## Ethical Disclaimer
 **For authorized lab and educational use only.**  
