@@ -1,6 +1,25 @@
 <# 
 .SYNOPSIS
-    Detects anomalous logon patterns - Insider Threat Detection (Finance Focus)
+    Detects anomalous Windows logon activity for insider threat hunting.
+
+.DESCRIPTION
+    Analyzes Windows Security Event Logs to identify suspicious logon patterns, including:
+    - Off-hours logons
+    - Logons from unusual workstations
+    - Spikes in failed logon attempts
+
+    Designed for financial services and regulated environments where abuse of valid accounts is a high risk.
+
+.NOTES
+    Author: B. Underhill
+    Development assisted by: xAI Grok
+    Version: 2.1
+    MITRE ATT&CK: T1078 Valid Accounts, T1110 Brute Force
+    Requires: Administrator or Event Log Readers rights
+    Tested in: SANS SEC504 Windows 10 lab environment
+
+    Ethical Disclaimer: For authorized educational and defensive security testing only.
+    Unauthorized use is prohibited.
 #>
 
 param(
