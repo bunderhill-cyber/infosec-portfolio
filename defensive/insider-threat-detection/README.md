@@ -5,6 +5,7 @@ Defensive security tools focused on detecting insider threats in financial servi
 ## Included Techniques
 - **Anomalous Logon Detection** (`Detect-LogonAnomalies.ps1`)
 - **USB/Removable Media Exfiltration Detection** (`Detect-USBExfiltration.ps1`)
+- **Behavioral Anomaly Detection** (`behavioral_anomaly_detector.py`)
 
 ## Overview
 Practical detection engineering using Windows Event Logs and Sysmon. 
