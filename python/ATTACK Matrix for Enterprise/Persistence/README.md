@@ -5,6 +5,7 @@ This project demonstrates the **Persistence** tactic using Windows Scheduled Tas
 **MITRE ATT&CK Mapping**  
 **Tactic**: Persistence
 **MITRE ATT&CK Technique:** T1053.005 - Scheduled Task
+
 **Author:** B. Underhill  
 **Date:** July 2026  
 
