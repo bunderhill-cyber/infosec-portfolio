@@ -1,0 +1,4 @@
+"User","AvgLogonHour","StdLogonHour","AvgFailedLogons","StdFailedLogons","AvgUSBWriteMB","StdUSBWriteMB","SampleDays","LastUpdated"
+"InsiderTest","9.5","1.8","0.5","0.8","8.0","5.0","7","2026-07-25 10:00"
+"SEC504STUDENT","10.2","2.1","1.2","1.5","15.0","10.0","7","2026-07-25 10:00"
+"Sec504","10","2","0.5","1","10","8","7","2026-07-25 12:08"
