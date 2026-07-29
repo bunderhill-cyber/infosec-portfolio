@@ -26,7 +26,7 @@ A Python tool using **Scapy** for TCP SYN port scanning and basic DNS server det
 
 ```bash
 sudo python3 PortScan_DNS_Scan.py 10.10.0.1
-
+```
 # Sample output
 === Recon Scan: 10.10.0.1 ===
 
