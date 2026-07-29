@@ -1,5 +1,8 @@
 # infosec-portfolio
 
+**Author:** B. Underhill
+Development assisted by xAI Grok where noted.
+
 A collection of practical **Python** and **PowerShell** scripts for learning and applying cybersecurity concepts across both **offensive** and **defensive** domains (reconnaissance, automation, system analysis, threat hunting, detection engineering, etc.).
 
 ## ⚠️ Important Disclaimer
