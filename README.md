@@ -15,8 +15,13 @@ All testing was performed in isolated lab environments (primarily the SANS SEC50
 
 ```
 infosec-portfolio/
-├── python/                              ← Python scripts
-├── powershell/                          ← PowerShell scripts
+├── python/
+│   ├── IP_Allow_List_Manager/
+│   ├── ATTACK_Matrix_for_Enterprise/
+│   └── ... other Python scripts
+├── powershell/
+│   ├── Persistence_Hunting/
+│   └── ... other PowerShell scripts
 ├── defensive/
 │   └── insider-threat-detection/        ← Focused defensive module
 │       ├── powershell/
@@ -26,6 +31,7 @@ infosec-portfolio/
 ├── docs/                                ← Study logs and project write-ups
 └── images/                              ← Screenshots and examples
 ```
+
 
 ---
 
