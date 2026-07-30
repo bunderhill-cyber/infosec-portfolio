@@ -19,21 +19,30 @@ All testing was performed in isolated lab environments (primarily the SANS SEC50
 
 ```
 infosec-portfolio/
-├── python/
-│   ├── IP_Allow_List_Manager/
-│   ├── ATTACK_Matrix_for_Enterprise/
-│   └── ... other Python scripts
-├── powershell/
-│   ├── Persistence_Hunting/
-│   └── ... other PowerShell scripts
+├── IP_Allow_List_Manager/
+├── mitre-attack/                          ← ATT&CK-aligned projects (by Tactic)
+│   ├── reconnaissance/
+│   ├── initial-access/
+│   ├── execution/
+│   ├── persistence/
+│   ├── privilege-escalation/
+│   ├── defense-evasion/
+│   ├── credential-access/
+│   ├── discovery/
+│   ├── lateral-movement/
+│   ├── collection/
+│   ├── command-and-control/
+│   ├── exfiltration/
+│   └── impact/
 ├── defensive/
-│   └── insider-threat-detection/        ← Focused defensive module
-│       ├── powershell/
-│       ├── python/
-│       ├── docs/
-│       └── README.md
-├── docs/                                ← Study logs and project write-ups
-└── images/                              ← Screenshots and examples
+│   ├── insider-threat-detection/          ← Complete multi-layer detection module
+│   │   ├── powershell/
+│   │   ├── python/
+│   │   ├── docs/
+│   │   └── README.md
+│   └── threat-hunting/                    ← Persistence hunting + future hunting scripts
+├── docs/                                  ← Study logs and project write-ups
+└── images/                                ← Screenshots and examples
 ```
 
 
