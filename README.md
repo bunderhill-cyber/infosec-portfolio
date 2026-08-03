@@ -18,12 +18,6 @@ All testing was performed in isolated lab environments (primarily the SANS SEC50
 ## Folder Structure
 
 ```
-Here’s the updated folder structure ready to paste into the main README:
-
-```markdown
-## Folder Structure
-
-```
 infosec-portfolio/
 ├── IP_Allow_List_Manager/
 ├── mitre-attack/                          ← ATT&CK-aligned projects (by Tactic)
