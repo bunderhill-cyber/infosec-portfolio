@@ -18,6 +18,12 @@ All testing was performed in isolated lab environments (primarily the SANS SEC50
 ## Folder Structure
 
 ```
+Here’s the updated folder structure ready to paste into the main README:
+
+```markdown
+## Folder Structure
+
+```
 infosec-portfolio/
 ├── IP_Allow_List_Manager/
 ├── mitre-attack/                          ← ATT&CK-aligned projects (by Tactic)
@@ -40,10 +46,12 @@ infosec-portfolio/
 │   │   ├── python/
 │   │   ├── docs/
 │   │   └── README.md
-│   └── threat-hunting/                    ← Persistence hunting + future hunting scripts
+│   ├── threat-hunting/                    ← Persistence hunting + execution detection scripts
+│   └── purple-team/                       ← Purple Team paired exercises
+│       └── phase-1-execution-defense-evasion/
 ├── docs/                                  ← Study logs and project write-ups
 └── images/                                ← Screenshots and examples
-```
+
 
 
 ---
