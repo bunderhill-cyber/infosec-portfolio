@@ -1,0 +1,16 @@
+Purple Team Phase 2 – Discovery Demo
+Lab: SANS SEC504 Windows 10 Enterprise + Sysmon
+Date: 2026-08-06
+
+Offensive script: Invoke-DiscoveryDemo.ps1
+Staging artifacts: PurpleTeam-Phase2\Discovery\ (report + marker)
+
+Sysmon Event ID 1 (Process Create) evidence:
+- systeminfo.exe   (T1082)  Parent: powershell.exe
+- tasklist.exe     (T1057)  Parent: powershell.exe  CommandLine: /FO LIST
+- whoami.exe       (T1087)  Parent: powershell.exe  CommandLine: /all
+- ipconfig.exe     (T1016)  Parent: powershell.exe  CommandLine: /all
+
+All four processes were launched from the same PowerShell instance
+(ParentProcessId 7244) running as SEC504STUDENT\Sec504.
+This demonstrates clear, detectable Discovery activity via native binaries.
