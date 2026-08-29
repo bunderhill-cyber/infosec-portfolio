@@ -42,7 +42,10 @@ infosec-portfolio/
 │   │   └── README.md
 │   ├── threat-hunting/                    ← Persistence hunting + execution detection scripts
 │   └── purple-team/                       ← Purple Team paired exercises
-│       └── phase-1-execution-defense-evasion/
+│       ├── phase-1-execution-defense-evasion/
+│       ├── phase-2-discovery-collection-exfiltration/
+│       ├── phase-3-lateral-movement-privilege-escalation/
+│       └── phase-4-command-and-control-impact/
 ├── docs/                                  ← Study logs and project write-ups
 └── images/                                ← Screenshots and examples
 
