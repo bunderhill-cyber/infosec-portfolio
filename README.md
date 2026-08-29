@@ -46,7 +46,7 @@ infosec-portfolio/
 ├── docs/                                  ← Study logs and project write-ups
 └── images/                                ← Screenshots and examples
 
-
+```
 
 ---
 
