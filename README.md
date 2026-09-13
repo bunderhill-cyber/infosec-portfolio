@@ -4,7 +4,18 @@
 
 Development assisted by xAI Grok where noted.
 
-ATT&CK-mapped purple-team labs and detection engineering: paired offense + Sysmon detections, insider-threat analytics, and threat hunting. PowerShell and Python. Authorized lab use only.
+Hands-on **detection engineering**, **purple-team** labs mapped to **MITRE ATT&CK**, and a smaller **Frontier AI finding-validation** track.
+
+This repository is not a script dump. Purple-team exercises pair an authorized offensive demonstration with the defensive telemetry that should catch it. The Frontier AI folder is different: it treats model output as signal and forces a validation gate before anything becomes a ticket. All of it is **PowerShell** and **Python**, tested in an isolated SANS SEC504 Windows 10 lab, using synthetic data only.
+
+Current scope:
+- **Purple Team Phases 1–4** — Execution & Defense Evasion; Discovery, Collection & Exfiltration; Privilege Escalation & Lateral Movement; Command and Control & Impact (each with documented detections *and* known telemetry gaps)
+- **Insider threat detection** — rule-based logon/USB detections plus a Python behavioral (UEBA-lite) scoring layer
+- **Threat hunting** — persistence and suspicious-execution hunts
+- **Frontier AI finding validation** — seeded model-style findings, a Python validation funnel, executive one-pager (In Review)
+- **ATT&CK-aligned labs** by tactic under `mitre-attack/`
+
+The goal is to show both how an L2 / detection-minded analyst thinks (generate the activity, prove what the logs show, write down what the stack missed) and how a program treats AI-assisted discovery (finding != weakness != exploitable != owned risk).
 
 ## ⚠️ Important Disclaimer
 
@@ -41,14 +52,20 @@ infosec-portfolio/
 │   │   ├── docs/
 │   │   └── README.md
 │   ├── threat-hunting/                    ← Persistence hunting + execution detection scripts
-│   └── purple-team/                       ← Purple Team paired exercises
-│       ├── phase-1-execution-defense-evasion/
-│       ├── phase-2-discovery-collection-exfiltration/
-│       ├── phase-3-lateral-movement-privilege-escalation/
-│       └── phase-4-command-and-control-impact/
+│   ├── purple-team/                       ← Purple Team paired exercises
+│   │   ├── phase-1-execution-defense-evasion/
+│   │   ├── phase-2-discovery-collection-exfiltration/
+│   │   ├── phase-3-lateral-movement-privilege-escalation/
+│   │   └── phase-4-command-and-control-impact/
+│   └── frontier-ai-findings-validation/   ← Epic: validation funnel, not ATT&CK pairing
+│       ├── README.md
+│       ├── app.py                         ← Lab Shop (127.0.0.1:8088)
+│       ├── secrets.env
+│       ├── findings.json                  ← 12 seeded findings
+│       ├── validate_findings.py           ← Gate
+│       └── program-status.md              ← Executive one-pager
 ├── docs/                                  ← Study logs and project write-ups
 └── images/                                ← Screenshots and examples
-
 ```
 
 ---
@@ -115,11 +132,11 @@ I treat continuous learning as a core professional habit — especially importan
 
 ## Next Steps
 
+- Human expert review of the Frontier AI Lab Shop funnel (In Review — do not mark Done yet)
+- Backlog on that epic: point the same gate at localhost OWASP Juice Shop; then an Ollama firehose into the same schema
 - Expand the Insider Threat Detection module with additional behavioral signals
 - Continue adding well-documented Python and PowerShell scripts mapped to MITRE ATT&CK
-- Expand the `docs/` folder with learning logs and project write-ups
-- Build complementary offensive and defensive tools that demonstrate end-to-end understanding
 
 ---
 
-*This portfolio is designed to demonstrate practical, job-relevant skills for roles such as SOC Analyst, Detection Engineer, Security Engineer, and related cybersecurity positions.*
+*This portfolio is built to show practical cyber delivery: hands-on labs a detection engineer would recognize, and the validation, prioritization, and executive-ready status work a senior program or technical-program role uses to turn noisy findings into owned risk reduction.*
