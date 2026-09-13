@@ -1,0 +1,139 @@
+{
+  "generated_by": "seeded-lab-model-output",
+  "note": "Hand-authored to look like model output. Ground truth is in expected_class. Not a live frontier-model run.",
+  "target": "http://127.0.0.1:8088",
+  "findings": [
+    {
+      "id": "FA-001",
+      "title": "SQL injection in product search",
+      "severity": "critical",
+      "endpoint": "/search",
+      "method": "GET",
+      "param": "q",
+      "model_rationale": "q is concatenated into a LIKE clause. Payload ' OR '1'='1 returns every product.",
+      "check": "sql_injection_search",
+      "expected_class": "exploitable"
+    },
+    {
+      "id": "FA-002",
+      "title": "IDOR on user profile",
+      "severity": "high",
+      "endpoint": "/profile",
+      "method": "GET",
+      "param": "id",
+      "model_rationale": "No session binding. Incrementing id discloses other users including admin.",
+      "check": "idor_profile",
+      "expected_class": "exploitable"
+    },
+    {
+      "id": "FA-003",
+      "title": "Missing authentication on /profile",
+      "severity": "high",
+      "endpoint": "/profile",
+      "method": "GET",
+      "param": "id",
+      "model_rationale": "Same issue as FA-002 restated as an authn gap. Duplicate of FA-002.",
+      "check": "idor_profile",
+      "expected_class": "duplicate"
+    },
+    {
+      "id": "FA-004",
+      "title": "Hardcoded admin password",
+      "severity": "critical",
+      "endpoint": "/login",
+      "method": "POST",
+      "param": "password",
+      "model_rationale": "Login accepts admin / ChangeMe!23. Credential is in source.",
+      "check": "hardcoded_login",
+      "expected_class": "exploitable"
+    },
+    {
+      "id": "FA-005",
+      "title": "AI helper leaks lab API key from prompt",
+      "severity": "high",
+      "endpoint": "/ai-helper",
+      "method": "POST",
+      "param": "prompt",
+      "model_rationale": "Prompt concatenation plus debug echo when the prompt contains 'key'. Insecure AI feature / data leakage.",
+      "check": "ai_key_leak",
+      "expected_class": "exploitable"
+    },
+    {
+      "id": "FA-006",
+      "title": "Insecure deserialization in old_widget",
+      "severity": "critical",
+      "endpoint": "/search",
+      "method": "GET",
+      "param": null,
+      "model_rationale": "third_party/old_widget.py exposes dangerous_deserialize. LAB-CVE-2024-0001.",
+      "check": "unused_component",
+      "expected_class": "weakness_not_exploitable"
+    },
+    {
+      "id": "FA-007",
+      "title": "Reflected XSS on search",
+      "severity": "high",
+      "endpoint": "/search",
+      "method": "GET",
+      "param": "q",
+      "model_rationale": "Search reflects q. <script>alert(1)</script> should execute.",
+      "check": "xss_search_waf",
+      "expected_class": "control_covers"
+    },
+    {
+      "id": "FA-008",
+      "title": "Open redirect on /login next= parameter",
+      "severity": "medium",
+      "endpoint": "/login",
+      "method": "GET",
+      "param": "next",
+      "model_rationale": "Login takes a next parameter and redirects off-origin.",
+      "check": "endpoint_param_exists",
+      "expected_class": "false_positive"
+    },
+    {
+      "id": "FA-009",
+      "title": "SSRF via /ai-helper url field",
+      "severity": "high",
+      "endpoint": "/ai-helper",
+      "method": "POST",
+      "param": "url",
+      "model_rationale": "Helper fetches operator-supplied URLs.",
+      "check": "endpoint_param_exists",
+      "expected_class": "false_positive"
+    },
+    {
+      "id": "FA-010",
+      "title": "Unauthenticated PII export at /admin/export",
+      "severity": "critical",
+      "endpoint": "/admin/export",
+      "method": "GET",
+      "param": null,
+      "model_rationale": "Admin export dumps the users table without authn.",
+      "check": "endpoint_exists",
+      "expected_class": "false_positive"
+    },
+    {
+      "id": "FA-011",
+      "title": "AI helper has no identity binding for the model key",
+      "severity": "medium",
+      "endpoint": "/ai-helper",
+      "method": "POST",
+      "param": null,
+      "model_rationale": "Non-human identity is a static key in secrets.env. No rotation, no per-call identity.",
+      "check": "static_nhi_key",
+      "expected_class": "exploitable"
+    },
+    {
+      "id": "FA-012",
+      "title": "Search error messages disclose SQL",
+      "severity": "low",
+      "endpoint": "/search",
+      "method": "GET",
+      "param": "q",
+      "model_rationale": "Broken SQL is printed back to the client. Useful for chaining FA-001.",
+      "check": "sql_error_disclosure",
+      "expected_class": "exploitable"
+    }
+  ]
+}
